@@ -27,7 +27,7 @@ import suzukiEvery8 from './img/Wireframe - 9-min.png';
 import suzukiEvery9 from './img/Wireframe - 10-min.png';
 import suzukiEvery10 from './img/Wireframe - 11-min.png';
 import suzukiEvery11 from './img/Wireframe - 12-min.png';
-import suzukiEvery12 from './img/Wireframe - 13-min.png';
+import suzukiEvery12 from './img/Wireframe - 6-min.png';
 
 interface Car {
   id: string;
