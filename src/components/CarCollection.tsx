@@ -15,19 +15,19 @@ import {
 } from 'react-share';
 
 import { FaFacebook } from 'react-icons/fa';
-import suzukiEvery from './img/Suzuki Carry DA52 FB.png';
-import suzukiEvery1 from './img/Suzuki Carry DA63 FB.png';
-import suzukiEvery2 from './img/Suzuki Carry DC51 Dropside-1.png';
-import suzukiEvery3 from './img/Suzuki Carry DC51 Dropside.png';
-import suzukiEvery4 from './img/Suzuki Carry DC51 FB.png';
-import suzukiEvery5 from './img/Suzuki Carry DC51 ‘Scrum’ Closed Van.png';
-import suzukiEvery6 from './img/Suzuki Every DA64 Double Cab.png';
-import suzukiEvery7 from './img/Suzuki Every DA64 Minivan-1.png';
-import suzukiEvery8 from './img/Suzuki Every DA64 Minivan-2.png';
-import suzukiEvery9 from './img/Suzuki Every DA64 Minivan-3.png';
-import suzukiEvery10 from './img/Suzuki Every DA64 Minivan-4.png';
-import suzukiEvery11 from './img/Suzuki Every DA64 Minivan-5.png';
-import suzukiEvery12 from './img/Suzuki Every DA64 Minivan.png';
+import suzukiEvery from './img/Wireframe - 1-min.png';
+import suzukiEvery1 from './img/Wireframe - 2-min.png';
+import suzukiEvery2 from './img/Wireframe - 3-min.png';
+import suzukiEvery3 from './img/Wireframe - 4-min.png';
+import suzukiEvery4 from './img/Wireframe - 5-min.png';
+import suzukiEvery5 from './img/Wireframe - 6-min.png';
+import suzukiEvery6 from './img/Wireframe - 7-min.png';
+import suzukiEvery7 from './img/Wireframe - 8-min.png';
+import suzukiEvery8 from './img/Wireframe - 9-min.png';
+import suzukiEvery9 from './img/Wireframe - 10-min.png';
+import suzukiEvery10 from './img/Wireframe - 11-min.png';
+import suzukiEvery11 from './img/Wireframe - 12-min.png';
+import suzukiEvery12 from './img/Wireframe - 13-min.png';
 
 interface Car {
   id: string;
