@@ -1,107 +1,197 @@
 import React from "react";
-import { FaFacebook,FaInstagram, FaGithub, FaTwitter, FaLinkedin, FaTiktok } from "react-icons/fa";
-import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
+import { FaFacebook, FaInstagram, FaGithub, FaTwitter, FaLinkedin, FaTiktok, FaWhatsapp, FaPhoneAlt, FaClock } from "react-icons/fa";
+import { HiMail, HiLocationMarker } from "react-icons/hi";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const footerSections = {
+    quickLinks: [
+      { name: "Home", to: "hero" },
+      { name: "Services", to: "serviceSolutions" },
+      { name: "Car Collection", to: "carCollection" },
+      { name: "Vehicle Builder", to: "vehicleBuilder" },
+      { name: "Testimonials", to: "testimonials" },
+      { name: "Contact", to: "contactForm" },
+      { name: "Locations", to: "locationMap" },
+    ],
+    services: [
+      "Japan Surplus Vehicles",
+      "Vehicle Financing",
+      "Trade-In Options",
+      "Vehicle Inspection",
+      "After-Sales Support",
+      "Documentation Assistance",
+    ],
+    vehicles: [
+      "Toyota HiAce",
+      "Mitsubishi L300",
+      "Suzuki Multi-Cab",
+      "Nissan Urvan",
+      "Toyota Coaster",
+      "Isuzu Elf",
+    ],
+  };
+
   return (
-    <footer className="bg-gray-900 text-white py-16">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <footer className="relative bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#a4d037]/10 rounded-full mix-blend-overlay filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#a4d037]/10 rounded-full mix-blend-overlay filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+      </div>
+
+      <div className="container mx-auto px-6 pt-20 pb-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Section */}
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Highway Motors CamSur</h3>
-            <p className="text-gray-400 mb-4">
-              Your trusted partner for Japan surplus vehicles, offering reliable and affordable options for all.
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className="text-2xl font-bold mb-6 text-[#a4d037]">Highway Motors CamSur</h3>
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              Your trusted partner for premium Japan surplus vehicles. We offer reliable and affordable options with exceptional service.
             </p>
-            <div className="flex space-x-4">
-            <a href="https://www.facebook.com/profile.php?id=61572950004086" target="_blank" className="hover:text-[#A4D037] transition-colors">
-                <FaFacebook size={24} />
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://www.facebook.com/profile.php?id=61572950004086"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 p-2 rounded-lg hover:bg-[#a4d037] hover:text-white transition-all duration-300"
+              >
+                <FaFacebook size={20} />
               </a>
-              <a href="https://www.instagram.com/vallelance" target="_blank" className="hover:text-[#A4D037] transition-colors">
-                <FaInstagram size={24} />
+              <a
+                href="https://www.instagram.com/vallelance"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 p-2 rounded-lg hover:bg-[#a4d037] hover:text-white transition-all duration-300"
+              >
+                <FaInstagram size={20} />
               </a>
-              <a href="https://github.com/lance28-beep" target="_blank" className="hover:text-[#A4D037] transition-colors">
-                <FaGithub size={24} />
+              <a
+                href="https://twitter.com/rolando_va52047"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 p-2 rounded-lg hover:bg-[#a4d037] hover:text-white transition-all duration-300"
+              >
+                <FaTwitter size={20} />
               </a>
-              <a href="https://x.com/rolando_va52047" target="_blank" className="hover:text-[#A4D037] transition-colors">
-                <FaTwitter size={24} />
-              </a>
-              <a href="https://www.linkedin.com" target="_blank" className="hover:text-[#A4D037] transition-colors">
-                <FaLinkedin size={24} />
-              </a>
-              <a href="https://www.tiktok.com" target="_blank" className="hover:text-[#A4D037] transition-colors">
-                <FaTiktok size={24} />
+              <a
+                href="https://wa.me/639123456789"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 p-2 rounded-lg hover:bg-[#a4d037] hover:text-white transition-all duration-300"
+              >
+                <FaWhatsapp size={20} />
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Menu Section */}
-          <div>
-            <h4 className="text-lg font-bold mb-4">Menu</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="hero" smooth={true} duration={500} className="text-gray-400 hover:text-[#A4D037] transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="serviceSolutions" smooth={true} duration={500} className="text-gray-400 hover:text-[#A4D037] transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="carCollection" smooth={true} duration={500} className="text-gray-400 hover:text-[#A4D037] transition-colors">
-                  Car Collection
-                </Link>
-              </li>
-              <li>
-                <Link to="testimonials" smooth={true} duration={500} className="text-gray-400 hover:text-[#A4D037] transition-colors">
-                  Testimonials
-                </Link>
-              </li>
-              <li>
-                <Link to="contactForm" smooth={true} duration={500} className="text-gray-400 hover:text-[#A4D037] transition-colors">
-                  Contact Form
-                </Link>
-              </li>
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h4 className="text-lg font-bold mb-6 text-white">Quick Links</h4>
+            <ul className="space-y-3">
+              {footerSections.quickLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    to={link.to}
+                    smooth={true}
+                    duration={500}
+                    className="text-gray-400 hover:text-[#a4d037] transition-colors cursor-pointer inline-block"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
 
-          {/* Contact Section */}
-          <div>
-            <h4 className="text-lg font-bold mb-4">Contact Info</h4>
+          {/* Services */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <h4 className="text-lg font-bold mb-6 text-white">Our Services</h4>
+            <ul className="space-y-3">
+              {footerSections.services.map((service, index) => (
+                <li key={index} className="text-gray-400 hover:text-[#a4d037] transition-colors">
+                  {service}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <h4 className="text-lg font-bold mb-6 text-white">Contact Info</h4>
             <ul className="space-y-4">
-              <li className="flex items-center">
-                <FiMapPin size={20} className="mr-2 text-[#A4D037]" />
-                <span className="text-gray-400">Anayan, Pili, Camarines Sur, 4418 Philippines</span>
+              <li className="flex items-start space-x-3 group">
+                <HiLocationMarker className="w-6 h-6 text-[#a4d037] mt-1 group-hover:scale-110 transition-transform" />
+                <span className="text-gray-400 hover:text-[#a4d037] transition-colors">
+                  Anayan, Pili, Camarines Sur, 4418 Philippines
+                </span>
               </li>
-              <li className="flex items-center">
-                <FiPhone size={20} className="mr-2 text-[#A4D037]" />
-                <span className="text-gray-400">+63 912 345 6789</span>
+              <li className="flex items-center space-x-3 group">
+                <FaPhoneAlt className="w-5 h-5 text-[#a4d037] group-hover:scale-110 transition-transform" />
+                <span className="text-gray-400 hover:text-[#a4d037] transition-colors">
+                  +63 912 345 6789
+                </span>
               </li>
-              <li className="flex items-center">
-                <FiMail size={20} className="mr-2 text-[#A4D037]" />
-                <span className="text-gray-400">info@highwaymotors.com</span>
+              <li className="flex items-center space-x-3 group">
+                <HiMail className="w-6 h-6 text-[#a4d037] group-hover:scale-110 transition-transform" />
+                <span className="text-gray-400 hover:text-[#a4d037] transition-colors">
+                  info@highwaymotors.com
+                </span>
+              </li>
+              <li className="flex items-center space-x-3 group">
+                <FaClock className="w-5 h-5 text-[#a4d037] group-hover:scale-110 transition-transform" />
+                <span className="text-gray-400 hover:text-[#a4d037] transition-colors">
+                  Mon - Sat: 9:00 AM - 6:00 PM
+                </span>
               </li>
             </ul>
-          </div>
-
-          {/* Developer Section */}
-          <div>
-            <h4 className="text-lg font-bold mb-4">Developer</h4>
-            <p className="text-gray-400 mb-4">
-              Site developed by{" "}
-              <a href="https://lance28-beep.github.io/portfolio-website" target="_blank" className="text-[#A4D037] hover:underline">
-                Lance Valle
-              </a>
-            </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-gray-400">© {new Date().getFullYear()} Highway Motors CamSur. All rights reserved.</p>
+        <div className="border-t border-gray-800 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div className="text-center md:text-left">
+              <p className="text-gray-400">
+                © {currentYear} Highway Motors CamSur. All rights reserved.
+              </p>
+            </div>
+            <div className="text-center md:text-right">
+              <p className="text-gray-400">
+                Developed by{" "}
+                <a
+                  href="https://lance28-beep.github.io/portfolio-website"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#a4d037] hover:underline"
+                >
+                  Lance Valle
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
