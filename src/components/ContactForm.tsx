@@ -213,10 +213,10 @@ const ContactForm = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              Get in Touch
+              Contact Us Today
             </motion.span>
             <motion.h2 
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -225,7 +225,7 @@ const ContactForm = () => {
               Let's Start a Conversation
             </motion.h2>
             <motion.p 
-              className="text-gray-600 max-w-2xl mx-auto text-lg"
+              className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg px-4 md:px-0"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -235,9 +235,9 @@ const ContactForm = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Animated Messages List */}
-            <div className="lg:col-span-1">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-8">
+            {/* Animated Messages List - Hidden on mobile, shown on larger screens */}
+            <div className="lg:col-span-1 hidden lg:block">
               <div className="relative flex h-[500px] w-full flex-col overflow-hidden p-2">
                 <AnimatedList 
                   className="flex flex-col-reverse space-y-0 space-y-reverse gap-4" 
@@ -255,13 +255,13 @@ const ContactForm = () => {
 
             {/* Form Section */}
             <motion.div 
-              className="lg:col-span-2 bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/30 hover:bg-white/90 transition-all duration-300"
+              className="lg:col-span-2 bg-white/80 backdrop-blur-md p-4 md:p-8 rounded-2xl shadow-xl border border-white/30 hover:bg-white/90 transition-all duration-300"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                 {['name', 'email', 'phone', 'message'].map((field) => (
                   <motion.div 
                     key={field}
@@ -277,10 +277,10 @@ const ContactForm = () => {
                           : 'top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-[#A4D037]'
                       }`}
                     >
-                      {field === 'name' && <User size={20} />}
-                      {field === 'email' && <Mail size={20} />}
-                      {field === 'phone' && <Phone size={20} />}
-                      {field === 'message' && <MessageCircle size={20} />}
+                      {field === 'name' && <User size={18} />}
+                      {field === 'email' && <Mail size={18} />}
+                      {field === 'phone' && <Phone size={18} />}
+                      {field === 'message' && <MessageCircle size={18} />}
                     </div>
                     {field === 'message' ? (
                       <textarea
@@ -291,7 +291,7 @@ const ContactForm = () => {
                         onBlur={() => handleBlur(`user_${field}` as keyof typeof focusedFields)}
                         placeholder={`Your ${field.charAt(0).toUpperCase() + field.slice(1)}`}
                         rows={4}
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-white/50 backdrop-blur-sm border border-gray-200/70 focus:outline-none focus:border-[#A4D037] focus:ring-2 focus:ring-[#A4D037]/20 transition-all duration-300 group-hover:border-[#A4D037]/50"
+                        className="w-full pl-10 md:pl-12 pr-4 py-2.5 md:py-3 text-sm md:text-base rounded-xl bg-white/50 backdrop-blur-sm border border-gray-200/70 focus:outline-none focus:border-[#A4D037] focus:ring-2 focus:ring-[#A4D037]/20 transition-all duration-300 group-hover:border-[#A4D037]/50"
                         required
                       />
                     ) : (
@@ -303,7 +303,7 @@ const ContactForm = () => {
                         onFocus={() => handleFocus(`user_${field}` as keyof typeof focusedFields)}
                         onBlur={() => handleBlur(`user_${field}` as keyof typeof focusedFields)}
                         placeholder={`Your ${field.charAt(0).toUpperCase() + field.slice(1)}`}
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-white/50 backdrop-blur-sm border border-gray-200/70 focus:outline-none focus:border-[#A4D037] focus:ring-2 focus:ring-[#A4D037]/20 transition-all duration-300 group-hover:border-[#A4D037]/50"
+                        className="w-full pl-10 md:pl-12 pr-4 py-2.5 md:py-3 text-sm md:text-base rounded-xl bg-white/50 backdrop-blur-sm border border-gray-200/70 focus:outline-none focus:border-[#A4D037] focus:ring-2 focus:ring-[#A4D037]/20 transition-all duration-300 group-hover:border-[#A4D037]/50"
                         required
                       />
                     )}
@@ -316,7 +316,7 @@ const ContactForm = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className={`text-center p-4 rounded-xl backdrop-blur-sm ${
+                      className={`text-center p-3 md:p-4 rounded-xl backdrop-blur-sm text-sm md:text-base ${
                         contactMessage.includes('✅')
                           ? 'bg-green-50/80 text-green-600 border border-green-200/70'
                           : 'bg-red-50/80 text-red-600 border border-red-200/70'
@@ -330,21 +330,21 @@ const ContactForm = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full bg-gradient-to-r from-[#A4D037] to-[#7FA728] text-white py-4 rounded-xl font-semibold 
+                  className={`w-full bg-gradient-to-r from-[#A4D037] to-[#7FA728] text-white py-3 md:py-4 rounded-xl font-semibold 
                     flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-[#A4D037]/20 
-                    focus:outline-none focus:ring-2 focus:ring-[#A4D037]/50 transition-all duration-300
+                    focus:outline-none focus:ring-2 focus:ring-[#A4D037]/50 transition-all duration-300 text-sm md:text-base
                     ${isSubmitting ? 'opacity-75 cursor-not-allowed' : 'hover:scale-[1.02]'}`}
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
                       <span>Sending...</span>
                     </>
                   ) : (
                     <>
-                      <Send className="w-5 h-5" />
+                      <Send className="w-4 h-4 md:w-5 md:h-5" />
                       <span>Send Message</span>
                     </>
                   )}

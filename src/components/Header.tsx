@@ -50,7 +50,7 @@ const Header = () => {
       className={`fixed w-full z-50 transition-all duration-500 ${
         isScrolled 
           ? 'bg-black/80 backdrop-blur-md shadow-lg py-2' 
-          : 'bg-transparent py-4'
+          : 'bg-transparent py-2 md:py-4'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -66,13 +66,15 @@ const Header = () => {
               to="hero"
               smooth={true}
               duration={500}
-              className="cursor-pointer"
+              className="cursor-pointer group"
             >
               <div className="flex flex-col text-white">
-                <h1 className="text-2xl md:text-3xl font-bold animate-glow">
-                  Highway Motors CamSur
+                <h1 className="text-base md:text-2xl lg:text-3xl font-bold animate-glow tracking-tight">
+                  Highway Motors
+                  <span className="block text-sm md:text-lg lg:text-xl text-[#A4D037]/90 font-medium mt-0.5">
+                    CamSur
+                  </span>
                 </h1>
-                <div className="h-0.5 w-0 group-hover:w-full bg-[#A4D037] transition-all duration-300" />
               </div>
             </Link>
           </motion.div>
@@ -110,13 +112,13 @@ const Header = () => {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="md:hidden p-2 bg-black/20 backdrop-blur-sm rounded-lg border border-white/10"
+            className="md:hidden p-2.5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-black/40 transition-all duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="text-white" size={24} />
+              <X className="text-white w-5 h-5" />
             ) : (
-              <Menu className="text-white" size={24} />
+              <Menu className="text-white w-5 h-5" />
             )}
           </motion.button>
         </div>
@@ -131,17 +133,17 @@ const Header = () => {
               variants={mobileMenuVariants}
               className="md:hidden mt-4"
             >
-              <nav className="bg-black/90 backdrop-blur-md rounded-2xl p-4 space-y-2 border border-white/10">
+              <nav className="bg-black/90 backdrop-blur-md rounded-2xl p-3 space-y-1.5 border border-white/10 shadow-xl">
                 {navItems.map((item) => (
                   <Link
                     key={item.to}
                     to={item.to}
                     smooth={true}
                     duration={500}
-                    className={`block px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 ${
+                    className={`block px-4 py-2.5 rounded-xl text-[15px] font-medium transition-all duration-300 ${
                       activeSection === item.to
                         ? 'bg-[#A4D037]/20 text-[#A4D037]'
-                        : 'text-white hover:bg-white/10'
+                        : 'text-white/90 hover:bg-white/5 hover:text-white'
                     }`}
                     onClick={() => {
                       setIsMenuOpen(false);

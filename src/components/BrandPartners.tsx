@@ -34,11 +34,11 @@ const BrandPartners = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-8 sm:py-12 md:py-16 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-<h2 className="text-center text-3xl font-bold mb-12 transition-all duration-300 ease-in-out transform hover:text-[#A4D037] hover:scale-105">
-  Our Car Brands
-</h2>
+        <h2 className="text-center text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 md:mb-12 transition-all duration-300 ease-in-out transform hover:text-[#A4D037] hover:scale-105">
+          Our Car Brands
+        </h2>
         <div
           ref={scrollRef}
           className="flex overflow-x-hidden whitespace-nowrap"
@@ -48,12 +48,12 @@ const BrandPartners = () => {
           {[...brands, ...brands].map((brand, index) => (
             <div
               key={`${brand.name}-${index}`}
-              className="flex-shrink-0 mx-8 transform hover:scale-110 transition-transform duration-300"
+              className="flex-shrink-0 mx-4 sm:mx-6 md:mx-8 transform hover:scale-110 transition-transform duration-300"
             >
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="h-16 w-auto grayscale hover:grayscale-0 transition-all duration-300"
+                className="h-10 sm:h-12 md:h-16 w-auto grayscale hover:grayscale-0 transition-all duration-300"
               />
             </div>
           ))}
