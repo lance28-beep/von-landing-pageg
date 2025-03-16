@@ -44,59 +44,73 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, promo }) =
           {/* Modal Content */}
           <div className="text-center">
             <div className="mb-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">🚗 Exclusive Deal Alert! 🎁</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">🔥 Exclusive VIP Deals! 💎</h3>
               <div className="bg-gradient-to-r from-[#A4D037] to-green-600 text-white px-4 py-3 rounded-lg mb-4">
-                <p className="font-semibold text-lg mb-1">Grab This Limited Offer:</p>
+                <p className="font-semibold text-lg mb-1">Unlock Your Premium Package:</p>
                 <div className="space-y-2">
-                  <p className="text-2xl font-bold">FREE 3-YEAR PMS</p>
+                  <p className="text-2xl font-bold">GUARANTEED LOWEST DP</p>
                   <div className="flex items-center justify-center space-x-2">
                     <span className="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold animate-pulse">PLUS</span>
-                    <p className="text-xl font-bold">LOW DOWNPAYMENT</p>
+                    <p className="text-xl font-bold">EXCLUSIVE FREEBIES</p>
                   </div>
+                  <p className="text-lg mt-2 bg-white/20 backdrop-blur-sm rounded-lg p-2">
+                    💫 Message now for <span className="font-bold underline">HIDDEN DISCOUNTS</span> & special packages! 💫
+                  </p>
                 </div>
               </div>
               <div className="flex items-center justify-center space-x-2 text-red-600 font-bold animate-pulse">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
-                <span>Offer Ends Soon!</span>
+                <span>Today's Special Offers - Limited Time Only!</span>
               </div>
             </div>
 
             <div className="space-y-6 mb-8">
               <div className="bg-blue-50 p-4 rounded-lg">
                 <p className="text-gray-800 text-lg font-semibold mb-3">
-                  What You'll Get:
+                  Exclusive VIP Package Includes:
                 </p>
                 <ul className="text-left text-gray-700 space-y-3">
                   <li className="flex items-center">
                     <svg className="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Complete 3-Year Preventive Maintenance</span>
+                    <span>Zero Down Payment Options <span className="text-blue-600 font-semibold">(For Qualified Buyers)</span></span>
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Minimum Downpayment Options</span>
+                    <span>Premium Accessories Package <span className="text-red-600 font-semibold">(Limited Time Offer!)</span></span>
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Flexible Payment Terms</span>
+                    <span>Express Processing <span className="text-purple-600 font-semibold">(Same-Day Approval!)</span></span>
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>🎁 <span className="text-green-600 font-semibold">Surprise Luxury Gifts</span> (VIP Clients Only!)</span>
                   </li>
                 </ul>
               </div>
 
               {/* Messenger CTA */}
               <div className="space-y-4">
-                <p className="text-lg font-semibold text-gray-800">
-                  🔥 Chat with us now to avail this exclusive offer!
-                </p>
+                <div className="bg-yellow-50 border-2 border-yellow-200 p-4 rounded-lg animate-pulse">
+                  <p className="text-lg font-bold text-gray-800">
+                    🎯 Special Alert:
+                  </p>
+                  <p className="text-base text-gray-700">
+                    Next <span className="font-bold text-red-600">3 CUSTOMERS</span> get an additional <span className="font-bold underline">MYSTERY BONUS</span>!
+                  </p>
+                </div>
                 <a
-                  href="https://m.me/your.messenger.id" // Replace with your Messenger ID
+                  href="https://m.me/mr.c0oletz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center w-full px-6 py-4 text-lg font-medium text-white bg-[#0084FF] hover:bg-[#0072db] rounded-xl transition duration-300 ease-in-out transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
@@ -104,20 +118,21 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, promo }) =
                   <svg className="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.44 5.51 3.69 7.19V22l3.4-1.87c.91.25 1.88.38 2.91.38 5.64 0 10-4.13 10-9.7C22 6.13 17.64 2 12 2zm1.13 12.89l-2.53-2.69-4.94 2.69 5.44-5.8 2.59 2.69 4.89-2.69-5.45 5.8z"/>
                   </svg>
-                  Message Now for Details
+                  Chat Now for VIP Benefits
                   <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
                 
-                <div className="text-sm text-gray-600">
-                  <p>✨ Get Instant Response</p>
-                  <p>🔒 Secure & Private Chat</p>
-                  <p>💫 Special Offer Reserved Upon Chat</p>
+                <div className="text-sm text-gray-600 space-y-1">
+                  <p>⚡ Priority Response Guaranteed</p>
+                  <p>🎯 Get Your Personalized Best Offer</p>
+                  <p>🔥 Unlock Member-Only Discounts</p>
+                  <p>🎁 Special Bonus for Quick Response</p>
                 </div>
               </div>
             </div>
 
             <div className="text-xs text-gray-500 mt-4">
-              *Limited time offer. Terms and conditions apply. Chat with us for complete details.
+              *Limited time VIP offers. Special packages available. Message now to secure your exclusive benefits before they expire.
             </div>
           </div>
         </div>
@@ -427,7 +442,7 @@ const Collection: React.FC = () => {
         }
         .animate-scroll {
           display: flex;
-          animation: scroll 60s linear infinite;
+          animation: scroll 90s linear infinite;
           width: fit-content;
         }
         .animate-scroll:hover {
@@ -435,7 +450,7 @@ const Collection: React.FC = () => {
         }
         @media (max-width: 768px) {
           .animate-scroll {
-            animation-duration: 45s;
+            animation-duration: 75s;
           }
         }
       `}</style>
